@@ -7,7 +7,7 @@ public class Anagrama extends org.apache.commons.collections.HashBag{
        super.putAll(cadena);
         
     }
-    public bool isAnagrama(String texto){
+    public boolean isAnagrama(String texto){
         return super.equals(new Anagrama(texto));
         
     }
