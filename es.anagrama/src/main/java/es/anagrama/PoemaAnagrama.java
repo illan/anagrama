@@ -1,10 +1,7 @@
 package es.anagrama;
 
-/**
- * Hello world!
- *
- */
-public class App 
+
+public class PoemaAnagrama 
 {
     public static void main( String[] args )
     {

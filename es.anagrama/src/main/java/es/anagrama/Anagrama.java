@@ -1,6 +1,6 @@
 package es.anagrama;
 
-public class Anagrama extends java.util.Bag{
+public class Anagrama extends org.apache.commons.collections.HashBag{
 
     public Anagrama(String cadena){
        super();    
@@ -12,10 +12,6 @@ public class Anagrama extends java.util.Bag{
         
     }
 
-        public static void main( String[] args )
-    {
-        
-    }
 
     
 }
