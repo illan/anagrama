@@ -30,14 +30,21 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
 
- 
+    public void testAnagramaTrivial()
+    {
+
+        assertTrue((new Anagrama()).isAnagrama("qwe","qwe"));
+    }
     public void testAnagrama()
     {
-       // InputStream is = getClass().getResourceAsStream( "/test.properties" );
-       
         assertTrue((new Anagrama()).isAnagrama("qwe","wqe"));
     }
-        public void testPoemaAnagrama()
+        public void testFraseAnagrama()
+    {
+        assertTrue((new Anagrama("[\\s]")).isAnagrama("qwe ewq","qwe ewq"));
+    }
+
+    public void testPoemaAnagrama()
     {
 
         assertTrue((new PoemaAnagrama()).isPoemaAnagrama("q w e\nw q e"));
