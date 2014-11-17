@@ -49,4 +49,9 @@ public class AppTest
 
         assertTrue((new PoemaAnagrama()).isPoemaAnagrama("q w e\nw q e"));
     }
+     public void testFalsePoemaAnagrama()
+    {
+
+        assertFalse((new PoemaAnagrama()).isPoemaAnagrama("q w e\nw q e\nd f r"));
+    }
 }
