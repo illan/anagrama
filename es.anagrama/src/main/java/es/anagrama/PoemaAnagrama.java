@@ -1,20 +1,33 @@
 package es.anagrama;
 
-
-public class PoemaAnagrama 
+import java.util.*;
+import java.util.regex.Pattern;
+public class PoemaAnagrama extends Anagrama
 {
     
-    public PoemaAnagrama(String[] cadenas){
-       super();    
-       super.addAll(java.util.Arrays.asList(cadenas)));
-        
+    public String SEPARADOR;
+    
+    public static String PALABRAS="[^\\w]";
+    
+    public PoemaAnagrama(){
+       super(PALABRAS);    
+       SEPARADOR=System.getProperty("line.separator").toString();
     }
-    public boolean isAnagrama(String texto){
-        return super.equals(new PoemaAnagrama(texto.split(LINEA));
-        
+    
+    public List<String> split(String cadena){
+       return java.util.Arrays.asList(cadena.split(SEPARADOR));
     }
-    public static void main( String[] args )
-    {
-        
+    public boolean isPoemaAnagrama(String texto){
+        List<String>  versos=split(texto);
+        for (String linea:versos){
+            
+            for (String otra:versos){
+                if (otra == linea) continue;
+                if (!isAnagrama(linea,otra))
+                    return false;
+            }
+            //return true;
+        }
+        return true;
     }
 }

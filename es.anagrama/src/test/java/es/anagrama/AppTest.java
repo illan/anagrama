@@ -3,13 +3,15 @@ package es.anagrama;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
+import es.anagrama.Anagrama;
+import es.anagrama.PoemaAnagrama;
 /**
  * Unit test for simple App.
  */
 public class AppTest 
     extends TestCase
 {
+    
     /**
      * Create the test case
      *
@@ -29,10 +31,15 @@ public class AppTest
     }
 
  
-    public void testApp()
+    public void testAnagrama()
     {
-        InputStream is = getClass().getResourceAsStream( "/test.properties" );
-        String cadena=is.;
-        assertTrue((new es.anagrama.Anagrama(cadena)).isAnagrama(cadena));
+       // InputStream is = getClass().getResourceAsStream( "/test.properties" );
+       
+        assertTrue((new Anagrama()).isAnagrama("qwe","wqe"));
+    }
+        public void testPoemaAnagrama()
+    {
+
+        assertTrue((new PoemaAnagrama()).isPoemaAnagrama("q w e\nw q e"));
     }
 }
