@@ -50,7 +50,7 @@
                         <echo>Checking for non-existence of ${filename}</echo>
                         <fail message="File not found: ${filename}">
                           <condition>
-                              <not><available file="${filename}"/></not>
+                              <not><available file="../${filename}"/></not>
                           </condition>
                         </fail>
                   </sequential>
@@ -69,6 +69,25 @@
           </execution>
         </executions>
       </plugin>
+                <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.2</version>
+        <executions>
+          <execution>
+            <goals><goal>java</goal></goals>
+            <phase>test</phase>
+          <configuration>
+          <mainClass>es.anagrama.PoemaAnagrama</mainClass>
+          <arguments>
+            <argument>${filename}</argument>
+          </arguments>
+         
+        </configuration>
+        </execution>
+        </executions>
+      </plugin>
+
     </plugins>
   </build>
 </project>
