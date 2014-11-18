@@ -9,7 +9,11 @@
 
   <name>es.anagrama</name>
   <url>http://maven.apache.org</url>
-
+  <parent>
+    <groupId>anagrama</groupId>
+  <artifactId>app</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  </parent>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -19,24 +23,13 @@
       <groupId>es.anagrama</groupId>
       <artifactId>es.anagrama</artifactId>
       <version>1.0-SNAPSHOT</version>
-
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-	<groupId>commons-collections</groupId>
-	<artifactId>commons-collections</artifactId>
-	<version>3.2.1</version>
-</dependency>
+  
   </dependencies>
  <build>
    <plugins>
 
-
+<!--
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
         <version>1.7</version>
@@ -54,12 +47,6 @@
                           </condition>
                         </fail>
                   </sequential>
-               
-                <!--
-                  Place any Ant task here. You can add anything
-                  you can add between <target> and </target> in a
-                  build.xml.
-                -->
 
               </target>
             </configuration>
@@ -69,24 +56,8 @@
           </execution>
         </executions>
       </plugin>
-                <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.2</version>
-        <executions>
-          <execution>
-            <goals><goal>java</goal></goals>
-            <phase>test</phase>
-          <configuration>
-          <mainClass>es.anagrama.PoemaAnagrama</mainClass>
-          <arguments>
-            <argument>${filename}</argument>
-          </arguments>
-         
-        </configuration>
-        </execution>
-        </executions>
-      </plugin>
+    -->  
+      
 
     </plugins>
   </build>
